@@ -1,0 +1,279 @@
+Context
+
+Build a modern, cinematic, scroll-driven website for a school-hosted TEDx event.
+The site should feel minimal, intellectual, and Apple-like, not flashy or marketing-heavy.
+
+Event details:
+
+Event type: TEDx (school hosted)
+
+Theme: Compass Within
+
+Subtitle: Finding direction in a world full of signals
+
+Date: 5 February
+
+Speakers: 10 total (6 students, 4 external – externals may be placeholders)
+
+Primary audience: students
+
+Secondary audience: teachers, judges, speakers
+
+1. TECH STACK REQUIREMENTS
+
+Use the following stack unless technically impossible:
+
+Framework: React (preferably with Vite or Next.js)
+
+Styling: Tailwind CSS
+
+Animation: GSAP + ScrollTrigger
+
+3D: Three.js (or React Three Fiber if appropriate)
+
+Deployment: Must run locally and be deployable from Replit
+
+Performance: Graceful fallback for low-end devices
+
+Do NOT use WordPress, heavy UI libraries, or autoplay audio.
+
+2. CORE DESIGN CONCEPT
+
+The website is a scroll-narrative experience, similar to Apple product pages.
+
+Central Visual Element
+
+A 3D red glass “X”
+
+Represents a compass / internal direction
+
+Appears throughout the scroll experience
+
+Visual Style
+
+Black or very dark background
+
+White typography
+
+Deep TED-red accent
+
+Large headings, minimal text
+
+Generous whitespace
+
+Subtle lighting and reflections
+
+3. PAGE STRUCTURE (VERY IMPORTANT)
+Pages
+
+Home (main scroll experience)
+
+Speakers
+
+Attend
+
+About TEDx
+
+Keep navigation minimal (max 4 links).
+
+4. HOME PAGE — SCROLL FLOW LOGIC
+
+Implement the homepage as one continuous scroll-controlled narrative.
+
+SECTION 1 — Hero (0–10%)
+
+Purpose: Legitimacy + presence
+
+Full viewport
+
+Centered 3D X
+
+Text:
+
+“TEDx[SchoolName]”
+
+“Compass Within”
+
+“Ideas worth spreading”
+
+No navigation visible yet
+
+Animation:
+
+X fades in slowly
+
+No rotation yet
+
+SECTION 2 — Theme Orientation (10–25%)
+
+Purpose: Explain theme emotionally, not literally
+
+X subtly tilts as if “searching”
+
+Light moves across glass material
+
+Text fades in/out:
+
+“Finding direction in a world full of signals”
+
+SECTION 3 — Meaning (25–40%)
+
+Purpose: Reflection
+
+Scroll speed feels slower
+
+X rotates slightly and stabilizes
+
+Copy example:
+
+“Direction isn’t found. It’s formed.”
+
+SECTION 4 — Speakers Preview (40–55%)
+
+Purpose: Social proof
+
+X moves slightly to the side
+
+Speaker cards slide in
+
+Show 6 speakers max
+
+Button: “View all speakers”
+
+Speaker cards:
+
+Photo placeholder
+
+Name
+
+Short topic line
+
+SECTION 5 — Event Details (55–70%)
+
+Purpose: Clarity
+
+Reduce motion
+
+Text-focused section
+
+Display clearly:
+
+Date: 5 February
+
+Speakers: 10
+
+Format: Student-led TEDx event
+
+SECTION 6 — Call to Action (70–90%)
+
+Purpose: Decision
+
+X is calm, centered
+
+Primary CTA button:
+
+“Attend”
+
+Secondary CTA:
+
+“Learn more”
+
+SECTION 7 — Exit / Closure (90–100%)
+
+Purpose: Confidence
+
+X settles into final position
+
+Glow slightly increases
+
+No further motion
+
+5. 3D X REQUIREMENTS
+
+Red glass / acrylic material
+
+Slight transparency
+
+Subtle internal glow
+
+No constant spinning
+
+All motion tied to scroll position
+
+If real-time 3D is too heavy:
+
+Fallback to pre-rendered video or static image
+
+6. MOBILE & PERFORMANCE RULES
+
+Detect device capability
+
+On mobile:
+
+Replace live 3D with static image or short looping video
+
+Keep text and layout identical
+
+Maintain 60fps on desktop where possible
+
+Lazy-load assets
+
+7. SPEAKERS PAGE
+
+Simple grid layout
+
+Click opens modal or detail page
+
+No heavy animations
+
+Focus on clarity and credibility
+
+8. ATTEND PAGE
+
+Clear registration CTA
+
+Placeholder button for external form (Google Form / Eventbrite)
+
+Brief rules or eligibility section
+
+9. ABOUT TEDx PAGE
+
+Explain:
+
+What TEDx is
+
+Difference between TED and TEDx
+
+Student-led nature of the event
+
+Keep tone calm and factual
+
+10. CODE QUALITY EXPECTATIONS
+
+Clean, modular components
+
+Comments explaining scroll logic
+
+Separate animation logic from layout
+
+Reusable components where possible
+
+11. IMPORTANT CONSTRAINTS
+
+No autoplay audio
+
+No flashy transitions
+
+No gimmicky effects
+
+Motion must always serve meaning
+
+Site must feel professional, calm, and intentional
+
+GOAL
+
+The final website should feel like:
+
+A guided journey through an idea, not a typical event website.
+
+Build the foundation first, then progressively enhance animations and visuals.
