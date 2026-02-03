@@ -46,7 +46,7 @@ export function Navigation() {
           <img 
             src="/images/tedx-logo.png" 
             alt="TEDx GEMS New Millennium School Youth" 
-            className="h-20 md:h-24 object-contain"
+            className="h-28 md:h-32 object-contain"
           />
         </a>
 
