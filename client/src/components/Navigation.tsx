@@ -44,9 +44,9 @@ export function Navigation() {
           data-testid="link-logo"
         >
           <img 
-            src="/images/tedx-logo.jpeg" 
+            src="/images/tedx-logo.png" 
             alt="TEDx GEMS New Millennium School Youth" 
-            className="h-14 md:h-16 object-contain"
+            className="h-20 md:h-24 object-contain"
           />
         </a>
 
