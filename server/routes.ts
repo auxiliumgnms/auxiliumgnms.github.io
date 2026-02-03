@@ -41,7 +41,7 @@ export async function seedDatabase() {
       designation: "External Speaker",
       title: "The Missing Picture: Reconstructing the Way Forward",
       summary: "When he lost his central vision at a young age, Nadi was forced to find direction differently. He shares how uncertainty can sharpen self-trust and lead us forward even when the path is no longer clear.",
-      photoUrl: "/images/speakers/speaker2.png",
+      photoUrl: "/images/speakers/speaker2.jpg",
       displayOrder: 2
     },
     {
@@ -71,7 +71,7 @@ export async function seedDatabase() {
     {
       name: "Sumeet Ramesh",
       designation: "Internal Speaker",
-      title: "Who decides you?",
+      title: "Contra Mundum: Who Decides You?",
       summary: "Explores how validation shapes what we like and believe—and why navigating today's new frontier is about trusting your inner compass enough to stay different.",
       photoUrl: "/images/speakers/speaker6.jpg",
       displayOrder: 6
@@ -97,7 +97,7 @@ export async function seedDatabase() {
       designation: "Internal Speaker",
       title: "When the Map Ends, the Compass Begins",
       summary: "Reflects on a 55-day road journey across 21 countries, exploring why travel still matters in a world dominated by technology, and how presence and empathy create bonds no screen can replicate.",
-      photoUrl: "/images/speakers/speaker9.png",
+      photoUrl: "/images/speakers/speaker9.jpg",
       displayOrder: 9
     },
     {
@@ -114,5 +114,5 @@ export async function seedDatabase() {
     await storage.createSpeaker(s);
   }
   
-  console.log("Database seeded with 10 speakers for TEDxNMS");
+  console.log("Database seeded with 10 speakers for TEDxGNMS Youth");
 }

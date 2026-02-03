@@ -165,9 +165,11 @@ export default function Home() {
         <footer className="py-12 px-6 border-t border-white/5 bg-black/50 backdrop-blur-sm">
           <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
             <div className="text-center md:text-left">
-              <span className="font-display font-bold text-2xl tracking-tighter block mb-2">
-                TEDx<span className="text-primary">NMS</span>
-              </span>
+              <img 
+                src="/images/tedx-logo.jpeg" 
+                alt="TEDx GEMS New Millennium School Youth" 
+                className="h-16 md:h-20 object-contain mb-2"
+              />
               <p className="text-xs text-white/40 max-w-xs">
                 This independent TEDx event is operated under license from TED.
               </p>
