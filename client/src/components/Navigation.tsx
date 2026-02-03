@@ -32,7 +32,7 @@ export function Navigation() {
     <nav
       className={cn(
         "fixed top-0 left-0 right-0 z-50 transition-all duration-500 ease-out py-6 px-6 md:px-12",
-        scrolled ? "bg-background/80 backdrop-blur-lg py-4 border-b border-white/5" : "bg-transparent"
+        scrolled ? "bg-background/90 backdrop-blur-lg py-4" : "bg-transparent"
       )}
       data-testid="nav-main"
     >
@@ -46,7 +46,7 @@ export function Navigation() {
           <img 
             src="/images/tedx-logo.jpeg" 
             alt="TEDx GEMS New Millennium School Youth" 
-            className="h-10 md:h-12 object-contain"
+            className="h-14 md:h-16 object-contain"
           />
         </a>
 
