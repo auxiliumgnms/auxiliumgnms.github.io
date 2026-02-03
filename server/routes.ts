@@ -65,7 +65,7 @@ export async function seedDatabase() {
       designation: "Internal Speaker",
       title: "The Unconquerable Whys",
       summary: "Explores how unanswered 'whys' create inner conflict and push us toward purpose. Drawing parallels between an athlete's journey and life.",
-      photoUrl: "/images/speakers/speaker5.png",
+      photoUrl: "/images/speakers/speaker5.jpg",
       displayOrder: 5
     },
     {
@@ -73,7 +73,7 @@ export async function seedDatabase() {
       designation: "Internal Speaker",
       title: "Who decides you?",
       summary: "Explores how validation shapes what we like and believe—and why navigating today's new frontier is about trusting your inner compass enough to stay different.",
-      photoUrl: "/images/speakers/speaker6.png",
+      photoUrl: "/images/speakers/speaker6.jpg",
       displayOrder: 6
     },
     {
@@ -89,7 +89,7 @@ export async function seedDatabase() {
       designation: "Internal Speaker",
       title: "The Pause Before the Path",
       summary: "Explores the idea of pausing and looking inwards before navigating a new frontier. The inner compass is not only a guide but also a mirror forcing us to return to our authentic self.",
-      photoUrl: "/images/speakers/speaker8.png",
+      photoUrl: "/images/speakers/speaker8.jpg",
       displayOrder: 8
     },
     {
