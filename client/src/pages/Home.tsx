@@ -1,5 +1,4 @@
 import { Experience3D } from "@/components/Experience3D";
-import { Navigation } from "@/components/Navigation";
 import { useSpeakers } from "@/hooks/use-speakers";
 import { SpeakerCard } from "@/components/SpeakerCard";
 import { motion } from "framer-motion";
@@ -14,7 +13,6 @@ export default function Home() {
   return (
     <div className="relative min-h-screen bg-background text-foreground selection:bg-primary selection:text-white">
       <Experience3D />
-      <Navigation />
 
       <main className="relative z-10">
         
@@ -29,10 +27,10 @@ export default function Home() {
               Ideas Worth Spreading
             </p>
             <h1 className="font-display text-6xl md:text-8xl lg:text-9xl font-bold leading-none tracking-tight mb-6 mix-blend-difference">
-              Compass<br/><span className="italic font-serif font-light text-white/80">Within</span>
+              The Compass<br/><span className="italic font-serif font-light text-white/80">Within</span>
             </h1>
             <p className="text-white/60 max-w-md mx-auto text-lg md:text-xl font-light">
-              TEDxCampus 2025
+              TEDxNMS · 5 February 2026
             </p>
           </motion.div>
           
@@ -51,7 +49,7 @@ export default function Home() {
         <section className="min-h-[75vh] flex items-center justify-start px-6 md:px-24 max-w-7xl mx-auto">
           <div className="max-w-2xl">
             <h2 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-8">
-              Finding direction in a world full of <span className="text-primary">signals</span>.
+              Navigating New <span className="text-primary">Frontiers</span>.
             </h2>
             <p className="text-xl md:text-2xl text-white/70 font-light leading-relaxed text-balance">
               We are constantly bombarded with noise—opinions, algorithms, expectations. 
@@ -100,8 +98,8 @@ export default function Home() {
                   <Calendar className="w-6 h-6" />
                   <span className="uppercase tracking-widest font-bold text-sm">Date</span>
                 </div>
-                <h3 className="text-3xl font-display font-bold mb-2">February 5, 2025</h3>
-                <p className="text-white/60">10:00 AM - 4:00 PM</p>
+                <h3 className="text-3xl font-display font-bold mb-2">5 February 2026</h3>
+                <p className="text-white/60">12:00 PM - 2:30 PM</p>
               </div>
               
               <div>
@@ -109,8 +107,8 @@ export default function Home() {
                   <MapPin className="w-6 h-6" />
                   <span className="uppercase tracking-widest font-bold text-sm">Location</span>
                 </div>
-                <h3 className="text-3xl font-display font-bold mb-2">Grand Auditorium</h3>
-                <p className="text-white/60">University Campus, Main Hall</p>
+                <h3 className="text-3xl font-display font-bold mb-2">Zayed Hall</h3>
+                <p className="text-white/60">Gems New Millennium Al Khail, 1st Floor</p>
               </div>
             </div>
             
@@ -145,7 +143,7 @@ export default function Home() {
           <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
             <div className="text-center md:text-left">
               <span className="font-display font-bold text-2xl tracking-tighter block mb-2">
-                TEDx<span className="text-primary">Campus</span>
+                TEDx<span className="text-primary">NMS</span>
               </span>
               <p className="text-xs text-white/40 max-w-xs">
                 This independent TEDx event is operated under license from TED.
@@ -159,7 +157,7 @@ export default function Home() {
             </div>
             
             <p className="text-xs text-white/30">
-              © 2025 Compass Within. All rights reserved.
+              © 2026 TEDxNMS Youth. All rights reserved.
             </p>
           </div>
         </footer>
