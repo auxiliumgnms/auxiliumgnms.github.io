@@ -13,11 +13,6 @@ export async function registerRoutes(
     res.json(speakers);
   });
 
-  app.get("/api/team", async (_req, res) => {
-    const team = await storage.getTeamMembers();
-    res.json(team);
-  });
-
   // Seed data on startup
   await seedDatabase();
 
@@ -82,32 +77,7 @@ export async function seedDatabase() {
     for (const s of speakersData) {
       await storage.createSpeaker(s);
     }
-
-    const teamData = [
-      {
-        name: "Angel Sanghvi",
-        role: "Chief Organiser",
-        team: "Core",
-        bio: "Year 13 commerce student interested in leadership and personal growth. Passionate about storytelling and idea-driven dialogue.",
-        displayOrder: 1
-      },
-      {
-        name: "Abhimanyu Singh",
-        role: "Deputy Organiser",
-        team: "Core",
-        bio: "Grade 11 student passionate about learning and self-growth. Dedicated to creating spaces where young voices can be heard.",
-        displayOrder: 2
-      },
-      { name: "Aahana Mathew", role: "Head", team: "Design", displayOrder: 3 },
-      { name: "Khwaish Kapoor", role: "Head", team: "Logistics", displayOrder: 4 },
-      { name: "Srinidhi Sayani", role: "Head", team: "Communications", displayOrder: 5 },
-      { name: "Udita Nair", role: "Head", team: "Media", displayOrder: 6 }
-    ];
-
-    for (const t of teamData) {
-      await storage.createTeamMember(t);
-    }
     
-    console.log("Database seeded with speakers and team");
+    console.log("Database seeded with speakers for TEDxNMS");
   }
 }
