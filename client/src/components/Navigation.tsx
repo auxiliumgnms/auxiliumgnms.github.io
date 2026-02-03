@@ -43,11 +43,11 @@ export function Navigation() {
           className="group cursor-pointer"
           data-testid="link-logo"
         >
-          <div className="flex items-center gap-2">
-            <span className="font-display font-bold text-2xl tracking-tighter">
-              TEDx<span className="text-primary">NMS</span>
-            </span>
-          </div>
+          <img 
+            src="/images/tedx-logo.jpeg" 
+            alt="TEDx GEMS New Millennium School Youth" 
+            className="h-10 md:h-12 object-contain"
+          />
         </a>
 
         <div className="hidden md:flex items-center gap-8">
