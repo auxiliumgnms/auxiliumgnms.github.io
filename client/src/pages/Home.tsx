@@ -1,23 +1,24 @@
 import { Experience3D } from "@/components/Experience3D";
+import { Navigation } from "@/components/Navigation";
 import { useSpeakers } from "@/hooks/use-speakers";
 import { SpeakerCard } from "@/components/SpeakerCard";
 import { motion } from "framer-motion";
-import { ArrowRight, Calendar, MapPin } from "lucide-react";
+import { Calendar, MapPin } from "lucide-react";
 
 export default function Home() {
   const { data: speakers } = useSpeakers();
 
-  // Sort speakers by displayOrder if available
   const sortedSpeakers = speakers?.sort((a, b) => a.displayOrder - b.displayOrder) || [];
 
   return (
     <div className="relative min-h-screen bg-background text-foreground selection:bg-primary selection:text-white">
       <Experience3D />
+      <Navigation />
 
       <main className="relative z-10">
         
         {/* SECTION 1: HERO */}
-        <section className="h-screen flex flex-col justify-center items-center text-center px-6">
+        <section id="hero" className="h-screen flex flex-col justify-center items-center text-center px-6">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -46,7 +47,7 @@ export default function Home() {
         </section>
 
         {/* SECTION 2: THEME */}
-        <section className="min-h-[75vh] flex items-center justify-start px-6 md:px-24 max-w-7xl mx-auto">
+        <section id="theme" className="min-h-[75vh] flex items-center justify-start px-6 md:px-24 max-w-7xl mx-auto">
           <div className="max-w-2xl">
             <h2 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-8">
               Navigating New <span className="text-primary">Frontiers</span>.
@@ -62,7 +63,7 @@ export default function Home() {
         <section className="min-h-[75vh] flex items-center justify-end px-6 md:px-24 max-w-7xl mx-auto text-right">
           <div className="max-w-2xl">
             <h2 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-8">
-              Direction isn’t found.<br/>It’s <span className="italic text-white/80">formed</span>.
+              Direction isn't found.<br/>It's <span className="italic text-white/80">formed</span>.
             </h2>
             <p className="text-xl md:text-2xl text-white/70 font-light leading-relaxed">
               Join us for an exploration of inner guidance systems, 
@@ -90,7 +91,7 @@ export default function Home() {
         </section>
 
         {/* SECTION 5: DETAILS */}
-        <section className="min-h-[60vh] flex flex-col justify-center items-center px-6 text-center">
+        <section id="details" className="min-h-[60vh] flex flex-col justify-center items-center px-6 text-center">
           <div className="glass-card p-12 rounded-3xl max-w-3xl w-full">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-12 text-left">
               <div>
@@ -121,21 +122,43 @@ export default function Home() {
           </div>
         </section>
 
-        {/* SECTION 6: CTA */}
-        <section className="h-screen flex flex-col justify-center items-center px-6 relative">
+        {/* SECTION 6: ABOUT / WHAT IS TEDX */}
+        <section id="about" className="min-h-[60vh] py-24 px-6 md:px-24 max-w-4xl mx-auto">
+          <div className="mb-12">
+            <h2 className="font-display text-4xl md:text-5xl font-bold mb-4">What is TEDx?</h2>
+            <div className="h-1 w-24 bg-primary rounded-full" />
+          </div>
+          
+          <div className="space-y-6 text-white/70 text-lg leading-relaxed">
+            <p>
+              In the spirit of discovering and spreading ideas, TED has created a program called TEDx. 
+              TEDx is a program of local, self-organized events that bring people together to share a TED-like experience.
+            </p>
+            <p>
+              Our event is called TEDxGNMS Youth, where x = independently organized TED event. 
+              At our TEDxGNMS Youth event, TED Talks video and live speakers will combine to spark deep discussion and connection in a small group.
+            </p>
+            <p>
+              The TED Conference provides general guidance for the TEDx program, but individual TEDx events, including ours, are self-organized.
+            </p>
+          </div>
+        </section>
+
+        {/* SECTION 7: CTA */}
+        <section className="h-[60vh] flex flex-col justify-center items-center px-6 relative">
           <h2 className="font-display text-5xl md:text-7xl lg:text-8xl font-bold mb-12 text-center">
             Find Your <br/><span className="text-primary">True North</span>
           </h2>
           
-          <div className="flex flex-col md:flex-row gap-6 items-center">
-            <button className="px-10 py-5 bg-primary text-white rounded-full font-bold text-lg tracking-wide hover:scale-105 transition-transform duration-300 shadow-xl shadow-primary/30 flex items-center gap-2 group">
-              Get Tickets
-              <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-            </button>
-            <button className="px-10 py-5 bg-transparent border border-white/20 text-white rounded-full font-bold text-lg tracking-wide hover:bg-white/5 transition-colors">
-              Become a Partner
-            </button>
-          </div>
+          <a 
+            href="https://www.gemsnewmillenniumschool-alkhail.com/" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="px-10 py-5 bg-transparent border border-white/20 text-white rounded-full font-bold text-lg tracking-wide hover:bg-white/5 transition-colors"
+            data-testid="link-school-website"
+          >
+            Visit School Website
+          </a>
         </section>
 
         {/* FOOTER */}
@@ -151,13 +174,37 @@ export default function Home() {
             </div>
             
             <div className="flex gap-8 text-sm text-white/60 font-medium">
-              <a href="#" className="hover:text-primary transition-colors">Instagram</a>
-              <a href="#" className="hover:text-primary transition-colors">Twitter</a>
-              <a href="#" className="hover:text-primary transition-colors">LinkedIn</a>
+              <a 
+                href="https://www.instagram.com/tedxgnmsyouth" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="hover:text-primary transition-colors"
+                data-testid="link-instagram-tedx"
+              >
+                @tedxgnmsyouth
+              </a>
+              <a 
+                href="https://www.instagram.com/gemsnms_alkhail" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="hover:text-primary transition-colors"
+                data-testid="link-instagram-school"
+              >
+                @gemsnms_alkhail
+              </a>
+              <a 
+                href="https://www.gemsnewmillenniumschool-alkhail.com/" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="hover:text-primary transition-colors"
+                data-testid="link-school-footer"
+              >
+                School Website
+              </a>
             </div>
             
             <p className="text-xs text-white/30">
-              © 2026 TEDxNMS Youth. All rights reserved.
+              © 2026 TEDxGNMS Youth. All rights reserved.
             </p>
           </div>
         </footer>

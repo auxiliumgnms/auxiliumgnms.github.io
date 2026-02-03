@@ -1,10 +1,8 @@
-import { Link, useLocation } from "wouter";
 import { cn } from "@/lib/utils";
 import { useEffect, useState } from "react";
 
 export function Navigation() {
   const [scrolled, setScrolled] = useState(false);
-  const [location] = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -15,11 +13,20 @@ export function Navigation() {
   }, []);
 
   const navItems = [
-    { label: "Home", href: "/" },
-    { label: "Speakers", href: "/#speakers" },
-    { label: "About", href: "/about" },
-    { label: "Attend", href: "/attend", primary: true },
+    { label: "Home", href: "#hero" },
+    { label: "Theme", href: "#theme" },
+    { label: "Speakers", href: "#speakers" },
+    { label: "Details", href: "#details" },
+    { label: "About", href: "#about" },
   ];
+
+  const scrollToSection = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    e.preventDefault();
+    const element = document.querySelector(href);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
+  };
 
   return (
     <nav
@@ -27,37 +34,37 @@ export function Navigation() {
         "fixed top-0 left-0 right-0 z-50 transition-all duration-500 ease-out py-6 px-6 md:px-12",
         scrolled ? "bg-background/80 backdrop-blur-lg py-4 border-b border-white/5" : "bg-transparent"
       )}
+      data-testid="nav-main"
     >
       <div className="max-w-7xl mx-auto flex items-center justify-between">
-        <Link href="/" className="group cursor-pointer">
+        <a 
+          href="#hero" 
+          onClick={(e) => scrollToSection(e, "#hero")}
+          className="group cursor-pointer"
+          data-testid="link-logo"
+        >
           <div className="flex items-center gap-2">
             <span className="font-display font-bold text-2xl tracking-tighter">
-              TEDx<span className="text-primary">Campus</span>
+              TEDx<span className="text-primary">NMS</span>
             </span>
           </div>
-        </Link>
+        </a>
 
         <div className="hidden md:flex items-center gap-8">
           {navItems.map((item) => (
-            <Link key={item.label} href={item.href}>
-              <div
-                className={cn(
-                  "cursor-pointer text-sm font-medium tracking-wide transition-all duration-300 relative group",
-                  item.primary
-                    ? "px-5 py-2.5 bg-primary text-white rounded-full hover:bg-primary/90 hover:scale-105 shadow-lg shadow-primary/25"
-                    : "text-white/80 hover:text-white"
-                )}
-              >
-                {item.label}
-                {!item.primary && (
-                  <span className="absolute -bottom-1 left-0 w-0 h-px bg-primary transition-all duration-300 group-hover:w-full" />
-                )}
-              </div>
-            </Link>
+            <a 
+              key={item.label} 
+              href={item.href}
+              onClick={(e) => scrollToSection(e, item.href)}
+              className="cursor-pointer text-sm font-medium tracking-wide transition-all duration-300 relative group text-white/80 hover:text-white"
+              data-testid={`link-nav-${item.label.toLowerCase()}`}
+            >
+              {item.label}
+              <span className="absolute -bottom-1 left-0 w-0 h-px bg-primary transition-all duration-300 group-hover:w-full" />
+            </a>
           ))}
         </div>
         
-        {/* Mobile Menu Icon Placeholder - Simplified for MVP */}
         <div className="md:hidden text-white">
           <span className="font-mono text-xs text-muted-foreground">[MENU]</span>
         </div>
