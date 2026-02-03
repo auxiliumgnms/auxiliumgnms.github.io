@@ -8,6 +8,7 @@ import {
 export interface IStorage {
   getSpeakers(): Promise<Speaker[]>;
   createSpeaker(speaker: InsertSpeaker): Promise<Speaker>;
+  clearSpeakers(): Promise<void>;
 }
 
 export class DatabaseStorage implements IStorage {
@@ -18,6 +19,10 @@ export class DatabaseStorage implements IStorage {
   async createSpeaker(speaker: InsertSpeaker): Promise<Speaker> {
     const [newSpeaker] = await db.insert(speakers).values(speaker).returning();
     return newSpeaker;
+  }
+
+  async clearSpeakers(): Promise<void> {
+    await db.delete(speakers);
   }
 }
 
