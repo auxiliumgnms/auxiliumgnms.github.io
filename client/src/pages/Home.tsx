@@ -11,7 +11,7 @@ export default function Home() {
   const sortedSpeakers = speakers?.sort((a, b) => a.displayOrder - b.displayOrder) || [];
 
   return (
-    <div className="relative min-h-screen bg-background text-foreground selection:bg-primary selection:text-white">
+    <div className="relative min-h-screen bg-background text-foreground selection:bg-primary selection:text-white topo-bg">
       <Experience3D />
       <Navigation />
 
@@ -19,6 +19,9 @@ export default function Home() {
         
         {/* SECTION 1: HERO */}
         <section id="hero" className="h-screen flex flex-col justify-center items-center text-center px-6">
+          <div className="absolute top-24 left-12 coord-text hidden md:block">
+            25.1972° N, 55.2744° E
+          </div>
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -48,6 +51,9 @@ export default function Home() {
 
         {/* SECTION 2: THEME */}
         <section id="theme" className="min-h-[75vh] flex items-center justify-start px-6 md:px-24 max-w-7xl mx-auto">
+          <div className="absolute -left-12 top-1/2 -translate-y-1/2 coord-text -rotate-90 hidden lg:block">
+            NAVIGATING NEW FRONTIERS // 001
+          </div>
           <div className="max-w-2xl">
             <h2 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-8">
               Navigating New <span className="text-primary">Frontiers</span>.
@@ -74,6 +80,9 @@ export default function Home() {
 
         {/* SECTION 4: SPEAKERS GRID */}
         <section id="speakers" className="min-h-screen py-24 px-6 md:px-24 max-w-7xl mx-auto">
+          <div className="absolute -right-12 top-1/2 -translate-y-1/2 coord-text rotate-90 hidden lg:block">
+            THE NAVIGATORS // 002
+          </div>
           <div className="mb-16">
             <h2 className="font-display text-4xl md:text-5xl font-bold mb-4">The Speakers</h2>
             <div className="h-1 w-24 bg-primary rounded-full" />
