@@ -1,13 +1,11 @@
 import { useQuery } from "@tanstack/react-query";
-import { api } from "@shared/routes";
+import { speakersData } from "../data/speakers";
 
 export function useSpeakers() {
   return useQuery({
-    queryKey: [api.speakers.list.path],
+    queryKey: ["/api/speakers"],
     queryFn: async () => {
-      const res = await fetch(api.speakers.list.path, { credentials: "include" });
-      if (!res.ok) throw new Error("Failed to fetch speakers");
-      return api.speakers.list.responses[200].parse(await res.json());
+      return Promise.resolve(speakersData);
     },
   });
 }
